@@ -1,0 +1,95 @@
+STARTING...
+Fetching desktop metadata....
+ GET: /meta/desktops
+{"success":true,"desktops":[{"os":"os x","os_version":"big sur","browser_name":"safari","browser_version":14},{"os":"os x","os_version":"catalina","browser_name":"edge","browser_version":98},{"os":"os x","os_version":"catalina","browser_name":"chrome","browser_version":98},{"os":"os x","os_version":"catalina","browser_name":"chrome","browser_version":84},{"os":"os x","os_version":"catalina","browser_name":"firefox","browser_version":93},{"os":"os x","os_version":"mojave","browser_name":"chrome","browser_version":75},{"os":"os x","os_version":"mojave","browser_name":"firefox","browser_version":84},{"os":"os x","os_version":"mojave","browser_name":"edge","browser_version":80}]}
+Desktop data fetched! Selecting random desktop
+
+Fetching devices metadata...
+ GET: /meta/devices
+{"success":true,"devices":[{"os":"android","os_version":9,"device":"samsung galaxy s10"},{"os":"android","os_version":10,"device":"google pixel 3"},{"os":"android","os_version":9,"device":"samsung galaxy note 10"},{"os":"android","os_version":9,"device":"samsung galaxy a10"},{"os":"ios","os_version":14,"device":"iphone xs"},{"os":"ios","os_version":14,"device":"iphone 11"},{"os":"ios","os_version":14,"device":"iphone 12 pro"},{"os":"ios","os_version":14,"device":"ipad air 4"}]}
+Devices data fetched! Selecting random device
+
+Fetching regions...
+ GET: /meta/regions
+{"success":true,"regions":["euw","usw","use","apse"]}
+Regions fetched! Selecting random region
+
+Fetching networks...
+ GET: /meta/networks
+{"success":true,"networks":{"mobile":[{"label":"Unthrottled","network":"No Traffic Shaping","value":"un_throttled_mobile"},{"label":"LTE","network":"12 Mbps, 70ms RTT","value":"lte"},{"label":"4G","network":"9 Mbps, 170ms RTT","value":"4g_normal"},{"label":"3G Fast","network":"1.6 Mbps/768 Kbps 150ms RTT","value":"3g_fast"},{"label":"3G","network":"1.6 Mbps/768 Kbps 300ms RTT","value":"3g_normal"}],"desktop":[{"label":"Unthrottled","network":"No Traffic Shaping","value":"un_throttled_desktop"},{"label":"Broadband Fast","network":"40/40 Mbps, 20ms RTT","value":"broadband_fast"},{"label":"Broadband","network":"5/1 Mbps, 28ms RTT","value":"broadband_normal"},{"label":"Broadband Slow","network":"1.5 Mbps/384 Kbps, 50ms RTT","value":"broadband_slow"}]}}
+Networks fetched! Selecting random network for mobile and desktops
+
+Final Configuration:
+{"desktops":[{"os":"os x","os_version":"catalina","browser_name":"chrome","browser_version":84}],"devices":[{"os":"android","os_version":9,"device":"samsung galaxy note 10"}],"region":"euw","desktop_network":"un_throttled_desktop","device_network":"lte"}
+
+Generating report for https://browserstack.com ...
+ POST: /report/
+Job id is: 8ce1c593d9de8f88aa13f88adb5e681d816beef2
+
+Trying to fetch report with id 8ce1c593d9de8f88aa13f88adb5e681d816beef2...
+ GET: /report/8ce1c593d9de8f88aa13f88adb5e681d816beef2
+Report status: Pending [Waiting 15 sec]...
+Trying to fetch report with id 8ce1c593d9de8f88aa13f88adb5e681d816beef2...
+ GET: /report/8ce1c593d9de8f88aa13f88adb5e681d816beef2
+Report status: Pending [Waiting 15 sec]...
+Trying to fetch report with id 8ce1c593d9de8f88aa13f88adb5e681d816beef2...
+ GET: /report/8ce1c593d9de8f88aa13f88adb5e681d816beef2
+Report fetched successfully
+Status: 200
+
+
+Getting HAR logs for desktop...
+ GET: /report/8ce1c593d9de8f88aa13f88adb5e681d816beef2/har
+HAR logs fetched
+
+Getting film strips for desktop...
+ GET: /report/8ce1c593d9de8f88aa13f88adb5e681d816beef2/filmstrips
+Film strip fetched
+
+Getting audit data for desktop...
+ GET: /report/8ce1c593d9de8f88aa13f88adb5e681d816beef2/audit
+Audit data fetched
+
+SOME RESULTS FOR https://browserstack.com:
+
+OS X - Catalina - chrome
+Visual metrics:  {
+  fcp: 1439,
+  speed_index: 2235,
+  visually_complete: 3233,
+  visually_complete_85: 2200,
+  visually_complete_95: 2200,
+  visually_complete_99: 3033,
+  last_visual_change: 3233
+}
+Navigation timings {
+  dns_lookup: 7,
+  tcp_connect: 98,
+  ttfb: 509,
+  response: 47,
+  dom_processing: 2464,
+  on_load: 28,
+  browser_processing: 495,
+  page_load_time: 2464
+}
+
+android - Samsung Galaxy Note 10 - chrome
+Visual metrics:  {
+  fcp: 1162,
+  speed_index: 1441,
+  visually_complete: 2848,
+  visually_complete_85: 1801,
+  visually_complete_95: 1831,
+  visually_complete_99: 1831,
+  last_visual_change: 2848
+}
+Navigation timings {
+  dns_lookup: 0,
+  tcp_connect: 261,
+  ttfb: 897,
+  response: 239,
+  dom_processing: 2215,
+  on_load: 8,
+  browser_processing: 249,
+  page_load_time: 2215
+}
