@@ -4,7 +4,14 @@ const ENDPOINTS = {
   report_assets: "/report/", // + {report_id}/{asset}
 };
 
-async function get_report_assets(base_url, job_id, params, auth) {
+async function get_report_assets(base_url, job_id, config, auth) {
+  const params = {
+    os: config["desktops"][0].os,
+    os_version: config["desktops"][0].os_version,
+    browser_name: config["desktops"][0].browser_name,
+    browser_version: config["desktops"][0].browser_version,
+  };
+
   // GET /report/{id}/har
   console.log(
     `Getting HAR logs for desktop... \n GET: ${

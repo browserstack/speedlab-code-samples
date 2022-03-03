@@ -20,71 +20,61 @@ Fetching networks...
 Networks fetched! Selecting random network for mobile and desktops
 
 Final Configuration:
-{"desktops":[{"os":"os x","os_version":"mojave","browser_name":"firefox","browser_version":84}],"devices":[{"os":"ios","os_version":14,"device":"iphone 11"}],"region":"usw","desktop_network":"broadband_normal","device_network":"un_throttled_mobile"}
-
+{"desktops":[{"os":"os x","os_version":"mojave","browser_name":"edge","browser_version":80}],"devices":[{"os":"ios","os_version":14,"device":"iphone xs"}],"region":"use","desktop_network":"un_throttled_desktop","device_network":"un_throttled_mobile"}
 
 Generating report for https://browserstack.com ...
  POST: /report/
-Job id is: a5fe41e4a3dd0e1c88c9fd08984e9f839de8f327
+Job id is: d9a070fdc640b7042f0317c532fef6c2e5cdbfcd
 
-Trying to fetch report with id a5fe41e4a3dd0e1c88c9fd08984e9f839de8f327...
- GET: /report/a5fe41e4a3dd0e1c88c9fd08984e9f839de8f327
-Report status: Pending [Waiting 15 sec]...
-Trying to fetch report with id a5fe41e4a3dd0e1c88c9fd08984e9f839de8f327...
- GET: /report/a5fe41e4a3dd0e1c88c9fd08984e9f839de8f327
-Report status: Pending [Waiting 15 sec]...
-Trying to fetch report with id a5fe41e4a3dd0e1c88c9fd08984e9f839de8f327...
- GET: /report/a5fe41e4a3dd0e1c88c9fd08984e9f839de8f327
-Report status: Pending [Waiting 15 sec]...
-Trying to fetch report with id a5fe41e4a3dd0e1c88c9fd08984e9f839de8f327...
- GET: /report/a5fe41e4a3dd0e1c88c9fd08984e9f839de8f327
-Report fetched successfully
+Trying to fetch report with id d9a070fdc640b7042f0317c532fef6c2e5cdbfcd...
+ GET: /report/d9a070fdc640b7042f0317c532fef6c2e5cdbfcd
+Report generated successfully
 Status: 200
 
+SOME RESULTS:
+
+ios - iPhone XS - safari
+Visual metrics:  { fcp: 2070 }
+Navigation timings {
+  dns_lookup: 0,
+  tcp_connect: 4,
+  ttfb: 228,
+  response: 158,
+  dom_processing: -1646234023427,
+  on_load: 0,
+  page_load_time: -1646234021425,
+  browser_processing: -1646234023427
+}
+
+OS X - Mojave - edge
+Visual metrics:  {
+  fcp: 886,
+  speed_index: 1824,
+  visually_complete: 2700,
+  visually_complete_85: 1800,
+  visually_complete_95: 1800,
+  visually_complete_99: 2300,
+  last_visual_change: 2700
+}
+Navigation timings {
+  dns_lookup: 7,
+  tcp_connect: 17,
+  ttfb: 278,
+  response: 68,
+  dom_processing: 2056,
+  on_load: 24,
+  browser_processing: 534,
+  page_load_time: 2056
+}
+
 Getting HAR logs for desktop...
- GET: /report/a5fe41e4a3dd0e1c88c9fd08984e9f839de8f327/har
+ GET: /report/d9a070fdc640b7042f0317c532fef6c2e5cdbfcd/har
 HAR logs fetched
 
 Getting film strips for desktop...
- GET: /report/a5fe41e4a3dd0e1c88c9fd08984e9f839de8f327/filmstrips
+ GET: /report/d9a070fdc640b7042f0317c532fef6c2e5cdbfcd/filmstrips
 Film strip fetched
 
 Getting audit data for desktop...
- GET: /report/a5fe41e4a3dd0e1c88c9fd08984e9f839de8f327/audit
+ GET: /report/d9a070fdc640b7042f0317c532fef6c2e5cdbfcd/audit
 Audit data fetched
-
-SOME RESULTS FOR https://browserstack.com:
-
-ios - iPhone 11 - safari
-Visual metrics:  { fcp: 477 }
-Navigation timings {
-  dns_lookup: 0,
-  tcp_connect: 2,
-  ttfb: 68,
-  response: 69,
-  dom_processing: 520,
-  on_load: 19,
-  page_load_time: 780,
-  browser_processing: 539
-}
-
-OS X - Mojave - firefox
-Visual metrics:  {
-  fcp: 796,
-  speed_index: 1594,
-  visually_complete: 4467,
-  visually_complete_85: 1500,
-  visually_complete_95: 1834,
-  visually_complete_99: 3034,
-  last_visual_change: 4467
-}
-Navigation timings {
-  dns_lookup: 14,
-  tcp_connect: 120,
-  ttfb: 708,
-  response: 107,
-  dom_processing: 3073,
-  on_load: 14,
-  browser_processing: 602,
-  page_load_time: 3073
-}
