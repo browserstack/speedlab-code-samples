@@ -1,0 +1,80 @@
+STARTING...
+Fetching desktop metadata....
+ GET: /meta/desktops
+{"success":true,"desktops":[{"os":"os x","os_version":"big sur","browser_name":"safari","browser_version":14},{"os":"os x","os_version":"catalina","browser_name":"edge","browser_version":98},{"os":"os x","os_version":"catalina","browser_name":"chrome","browser_version":98},{"os":"os x","os_version":"catalina","browser_name":"chrome","browser_version":84},{"os":"os x","os_version":"catalina","browser_name":"firefox","browser_version":93},{"os":"os x","os_version":"mojave","browser_name":"chrome","browser_version":75},{"os":"os x","os_version":"mojave","browser_name":"firefox","browser_version":84},{"os":"os x","os_version":"mojave","browser_name":"edge","browser_version":80}]}
+Desktop data fetched! Selecting random desktop
+
+Fetching devices metadata...
+ GET: /meta/devices
+{"success":true,"devices":[{"os":"android","os_version":9,"device":"samsung galaxy s10"},{"os":"android","os_version":10,"device":"google pixel 3"},{"os":"android","os_version":9,"device":"samsung galaxy note 10"},{"os":"android","os_version":9,"device":"samsung galaxy a10"},{"os":"ios","os_version":14,"device":"iphone xs"},{"os":"ios","os_version":14,"device":"iphone 11"},{"os":"ios","os_version":14,"device":"iphone 12 pro"},{"os":"ios","os_version":14,"device":"ipad air 4"}]}
+Devices data fetched! Selecting random device
+
+Fetching regions...
+ GET: /meta/regions
+{"success":true,"regions":["euw","usw","use","apse"]}
+Regions fetched! Selecting random region
+
+Fetching networks...
+ GET: /meta/networks
+{"success":true,"networks":{"mobile":[{"label":"Unthrottled","network":"No Traffic Shaping","value":"un_throttled_mobile"},{"label":"LTE","network":"12 Mbps, 70ms RTT","value":"lte"},{"label":"4G","network":"9 Mbps, 170ms RTT","value":"4g_normal"},{"label":"3G Fast","network":"1.6 Mbps/768 Kbps 150ms RTT","value":"3g_fast"},{"label":"3G","network":"1.6 Mbps/768 Kbps 300ms RTT","value":"3g_normal"}],"desktop":[{"label":"Unthrottled","network":"No Traffic Shaping","value":"un_throttled_desktop"},{"label":"Broadband Fast","network":"40/40 Mbps, 20ms RTT","value":"broadband_fast"},{"label":"Broadband","network":"5/1 Mbps, 28ms RTT","value":"broadband_normal"},{"label":"Broadband Slow","network":"1.5 Mbps/384 Kbps, 50ms RTT","value":"broadband_slow"}]}}
+Networks fetched! Selecting random network for mobile and desktops
+
+Final Configuration:
+{"desktops":[{"os":"os x","os_version":"mojave","browser_name":"edge","browser_version":80}],"devices":[{"os":"ios","os_version":14,"device":"iphone xs"}],"region":"use","desktop_network":"un_throttled_desktop","device_network":"un_throttled_mobile"}
+
+Generating report for https://browserstack.com ...
+ POST: /report/
+Job id is: d9a070fdc640b7042f0317c532fef6c2e5cdbfcd
+
+Trying to fetch report with id d9a070fdc640b7042f0317c532fef6c2e5cdbfcd...
+ GET: /report/d9a070fdc640b7042f0317c532fef6c2e5cdbfcd
+Report generated successfully
+Status: 200
+
+SOME RESULTS:
+
+ios - iPhone XS - safari
+Visual metrics:  { fcp: 2070 }
+Navigation timings {
+  dns_lookup: 0,
+  tcp_connect: 4,
+  ttfb: 228,
+  response: 158,
+  dom_processing: -1646234023427,
+  on_load: 0,
+  page_load_time: -1646234021425,
+  browser_processing: -1646234023427
+}
+
+OS X - Mojave - edge
+Visual metrics:  {
+  fcp: 886,
+  speed_index: 1824,
+  visually_complete: 2700,
+  visually_complete_85: 1800,
+  visually_complete_95: 1800,
+  visually_complete_99: 2300,
+  last_visual_change: 2700
+}
+Navigation timings {
+  dns_lookup: 7,
+  tcp_connect: 17,
+  ttfb: 278,
+  response: 68,
+  dom_processing: 2056,
+  on_load: 24,
+  browser_processing: 534,
+  page_load_time: 2056
+}
+
+Getting HAR logs for desktop...
+ GET: /report/d9a070fdc640b7042f0317c532fef6c2e5cdbfcd/har
+HAR logs fetched
+
+Getting film strips for desktop...
+ GET: /report/d9a070fdc640b7042f0317c532fef6c2e5cdbfcd/filmstrips
+Film strip fetched
+
+Getting audit data for desktop...
+ GET: /report/d9a070fdc640b7042f0317c532fef6c2e5cdbfcd/audit
+Audit data fetched
