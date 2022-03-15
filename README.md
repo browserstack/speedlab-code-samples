@@ -13,4 +13,4 @@ Demonstrates the workflow of SpeedLab APIs
   1. Import `speedlab-api.postman_collection.json` in your postman
   2. Under `SpeedlabAPI.Authorization` replace `browserstack_access_key` with `YOUR_USERNAME` and `browserstack_selenium_key` with `YOUR_ACCESS_KEY`
   3. Now you can access all the endpoints
-  4. Make sure to update the `PathVariables.id` with the relevant `report_id` that you get from `POST: /generate` endpoint
+  4. Make sure to update the `PathVariables.id` wherever required with the relevant `report_id` that you get from `POST: /generate` endpoint
