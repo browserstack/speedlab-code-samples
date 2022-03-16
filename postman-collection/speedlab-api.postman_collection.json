@@ -1,0 +1,591 @@
+{
+	"info": {
+		"_postman_id": "2840fe71-7186-410c-a86c-ac1a53073275",
+		"name": "Speedlabs API",
+		"description": "Basic Auth with browserstack access key as user name and browserstack selenium token as the password",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "meta",
+			"item": [
+				{
+					"name": "Desktops",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/meta/desktops",
+						"description": "Desktops"
+					},
+					"response": [
+						{
+							"name": "Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"url": "{{baseUrl}}/meta/desktops"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"desktops\": [\n        {\n            \"os\": \"os x\",\n            \"os_version\": \"catalina\",\n            \"browser_name\": \"firefox\",\n            \"browser_version\": \"93\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Devices",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/meta/devices",
+						"description": "Devices"
+					},
+					"response": [
+						{
+							"name": "Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"url": "{{baseUrl}}/meta/devices"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"devices\": [\n        {\n            \"os\": \"android\",\n            \"os_version\": \"9.0\",\n            \"device\": \"samsung galaxy s10\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Regions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/meta/regions",
+						"description": "Regions"
+					},
+					"response": [
+						{
+							"name": "Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"url": "{{baseUrl}}/meta/regions"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"regions\": [\n        \"euw\",\n        \"usw\",\n        \"use\",\n        \"apse\"\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Networks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/meta/networks",
+						"description": "Networks"
+					},
+					"response": [
+						{
+							"name": "Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"url": "{{baseUrl}}/meta/networks"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"networks\": {\n        \"mobile\": [\n            {\n                \"label\": \"4G\",\n                \"network\": \"9 Mbps, 170ms RTT\",\n                \"value\": \"4g_normal\"\n            }\n        ],\n        \"desktop\": [\n            {\n                \"label\": \"Broadband Fast\",\n                \"network\": \"40/40 Mbps, 20ms RTT\",\n                \"value\": \"broadband_fast\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				}
+			],
+			"description": "Configuration Information about the APIs"
+		},
+		{
+			"name": "Report",
+			"item": [
+				{
+					"name": "Generate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"url\": \"http://example.com\",\n    \"devices\": [\n        {\n            \"os\": \"android\",\n            \"os_version\": \"9.0\",\n            \"device\": \"samsung galaxy s10\"\n        },\n        {\n            \"os\": \"ios\",\n            \"os_version\": \"14\",\n            \"device\": \"iphone xs\"\n        }\n    ],\n    \"desktops\": [\n        {\n            \"os\": \"os x\",\n            \"os_version\": \"catalina\",\n            \"browser_name\": \"firefox\",\n            \"browser_version\": \"93.0\"\n        },\n        {\n            \"os\": \"os x\",\n            \"os_version\": \"mojave\",\n            \"browser_name\": \"chrome\",\n            \"browser_version\": \"75.0\"\n        },\n        {\n            \"os\": \"os x\",\n            \"os_version\": \"mojave\",\n            \"browser_name\": \"firefox\",\n            \"browser_version\": \"84.0\"\n        }\n    ],\n    \"region\": \"use\",\n    \"desktop_network\": \"broadband_normal\",\n    \"device_network\": \"4g_normal\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/report/",
+						"description": "Generate"
+					},
+					"response": [
+						{
+							"name": "Example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: basic",
+										"key": "Authorization",
+										"value": "Basic <credentials>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"url\": \"http://example.com\",\n    \"mobiles\": [\n        {\n            \"os\": \"android\",\n            \"os_version\": \"11.0\",\n            \"device\": \"oneplus 9\"\n        },\n        {\n            \"os\": \"ios\",\n            \"os_version\": \"14\",\n            \"device\": \"iphone xs\"\n        }\n    ],\n    \"desktops\": [\n        {\n            \"os\": \"os x\",\n            \"os_version\": \"catalina\",\n            \"browser_name\": \"firefox\",\n            \"browser_version\": \"latest\"\n        },\n        {\n            \"os\": \"os x\",\n            \"os_version\": \"mojave\",\n            \"browser_name\": \"chrome\",\n            \"browser_version\": \"75.0\"\n        },\n        {\n            \"os\": \"os x\",\n            \"os_version\": \"mojave\",\n            \"browser_name\": \"firefox\",\n            \"browser_version\": \"84.0\"\n        }\n    ],\n    \"desktop_network\": \"broadband_normal\",\n    \"mobile_network\": \"4g_normal\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/report/"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"job_id\": \"55378db6dcaaadde16389c6aa0f5dc52c25800a0\",\n    \"test_configuration\": {\n        \"url\": \"http://example.com\",\n        \"region\": \"use\",\n        \"device_network\": {\n            \"label\": \"4G\",\n            \"network\": \"9 Mbps, 170ms RTT\",\n            \"value\": \"4g_normal\"\n        },\n        \"desktop_network\": {\n            \"label\": \"Broadband\",\n            \"network\": \"5/1 Mbps, 28ms RTT\",\n            \"value\": \"broadband_normal\"\n        },\n        \"devices\": [\n            {\n                \"os\": \"android\",\n                \"os_version\": 9,\n                \"device\": \"samsung galaxy s10\"\n            },\n            {\n                \"os\": \"ios\",\n                \"os_version\": 14,\n                \"device\": \"iphone xs\"\n            }\n        ],\n        \"desktops\": [\n            {\n                \"os\": \"os x\",\n                \"os_version\": \"catalina\",\n                \"browser_name\": \"firefox\",\n                \"browser_version\": 93\n            },\n            {\n                \"os\": \"os x\",\n                \"os_version\": \"mojave\",\n                \"browser_name\": \"chrome\",\n                \"browser_version\": 75\n            },\n            {\n                \"os\": \"os x\",\n                \"os_version\": \"mojave\",\n                \"browser_name\": \"firefox\",\n                \"browser_version\": 84\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Result",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/report/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"report",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "",
+									"description": "(Required) "
+								}
+							]
+						},
+						"description": "Result"
+					},
+					"response": [
+						{
+							"name": "Result",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/report/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"report",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "string",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"test_configuration\": {\n        \"url\": \"http://example.com\",\n        \"region\": \"use\",\n        \"device_network\": {\n            \"label\": \"4G\",\n            \"network\": \"9 Mbps, 170ms RTT\",\n            \"value\": \"4g_normal\"\n        },\n        \"desktop_network\": {\n            \"label\": \"Broadband\",\n            \"network\": \"5/1 Mbps, 28ms RTT\",\n            \"value\": \"broadband_normal\"\n        },\n        \"devices\": [\n            {\n                \"os\": \"android\",\n                \"os_version\": 9,\n                \"device\": \"samsung galaxy s10\"\n            },\n            {\n                \"os\": \"ios\",\n                \"os_version\": 14,\n                \"device\": \"iphone xs\"\n            }\n        ],\n        \"desktops\": [\n            {\n                \"os\": \"os x\",\n                \"os_version\": \"catalina\",\n                \"browser_name\": \"firefox\",\n                \"browser_version\": 93\n            },\n            {\n                \"os\": \"os x\",\n                \"os_version\": \"mojave\",\n                \"browser_name\": \"chrome\",\n                \"browser_version\": 75\n            },\n            {\n                \"os\": \"os x\",\n                \"os_version\": \"mojave\",\n                \"browser_name\": \"firefox\",\n                \"browser_version\": 84\n            }\n        ],\n        \"report_id\": \"55378db6dcaaadde16389c6aa0f5dc52c25800a0\"\n    },\n    \"status\": \"complete\",\n    \"report_status\": true,\n    \"results\": [\n        {\n            \"browser_name\": \"firefox\",\n            \"os\": \"OS X\",\n            \"os_version\": \"Mojave\",\n            \"browser_version\": \"84.0\",\n            \"report\": [\n                {\n                    \"resource_summary\": {\n                        \"html\": {\n                            \"content_size\": 1256,\n                            \"requests\": 1\n                        },\n                        \"css\": {\n                            \"content_size\": 0,\n                            \"requests\": 0\n                        },\n                        \"javascript\": {\n                            \"content_size\": 0,\n                            \"requests\": 0\n                        },\n                        \"image\": {\n                            \"content_size\": 0,\n                            \"requests\": 0\n                        },\n                        \"font\": {\n                            \"content_size\": 0,\n                            \"requests\": 0\n                        }\n                    },\n                    \"cpu\": {\n                        \"long_tasks\": 0,\n                        \"categories\": 0\n                    },\n                    \"navigation_timings\": {\n                        \"dns_lookup\": 3,\n                        \"tcp_connect\": 31,\n                        \"ttfb\": 85,\n                        \"response\": 34,\n                        \"dom_processing\": 280,\n                        \"on_load\": 26,\n                        \"browser_processing\": 191,\n                        \"page_load_time\": 280\n                    },\n                    \"visual_metrics\": {\n                        \"speed_index\": 400,\n                        \"visually_complete\": 400,\n                        \"visually_complete_85\": 400,\n                        \"visually_complete_95\": 400,\n                        \"visually_complete_99\": 400,\n                        \"last_visual_change\": 400\n                    },\n                    \"web_vitals\": {\n                        \"fcp\": 321,\n                        \"lcp\": 0,\n                        \"cls\": 0,\n                        \"tbt\": 0\n                    },\n                    \"har_logs\": \"https://api.browserstack.com/speedlab/beta/report/55378db6dcaaadde16389c6aa0f5dc52c25800a0/har?browser_name=firefox&browser_version=84.0&os=OS+X&os_version=Mojave&run=run-1\",\n                    \"filmstrips\": {\n                        \"fcp\": \"https://api.browserstack.com/speedlab/beta/report/55378db6dcaaadde16389c6aa0f5dc52c25800a0/filmstrips?browser_name=firefox&browser_version=84.0&event=fcp&os=OS+X&os_version=Mojave&run=run-1\",\n                        \"visually_complete_85\": \"https://api.browserstack.com/speedlab/beta/report/55378db6dcaaadde16389c6aa0f5dc52c25800a0/filmstrips?browser_name=firefox&browser_version=84.0&event=vc_85&os=OS+X&os_version=Mojave&run=run-1\",\n                        \"visually_complete_95\": \"https://api.browserstack.com/speedlab/beta/report/55378db6dcaaadde16389c6aa0f5dc52c25800a0/filmstrips?browser_name=firefox&browser_version=84.0&event=vc_95&os=OS+X&os_version=Mojave&run=run-1\",\n                        \"visually_complete_99\": \"https://api.browserstack.com/speedlab/beta/report/55378db6dcaaadde16389c6aa0f5dc52c25800a0/filmstrips?browser_name=firefox&browser_version=84.0&event=vc_99&os=OS+X&os_version=Mojave&run=run-1\",\n                        \"page_load_time\": \"https://api.browserstack.com/speedlab/beta/report/55378db6dcaaadde16389c6aa0f5dc52c25800a0/filmstrips?browser_name=firefox&browser_version=84.0&event=page_load_time&os=OS+X&os_version=Mojave&run=run-1\",\n                        \"dom_content_load_time\": \"https://api.browserstack.com/speedlab/beta/report/55378db6dcaaadde16389c6aa0f5dc52c25800a0/filmstrips?browser_name=firefox&browser_version=84.0&event=dom_content_load_time&os=OS+X&os_version=Mojave&run=run-1\",\n                        \"last_visual_change\": \"https://api.browserstack.com/speedlab/beta/report/55378db6dcaaadde16389c6aa0f5dc52c25800a0/filmstrips?browser_name=firefox&browser_version=84.0&event=last_vc&os=OS+X&os_version=Mojave&run=run-1\"\n                    }\n                }\n            ]\n        },\n        {\n            \"browser_name\": \"firefox\",\n            \"os\": \"OS X\",\n            \"os_version\": \"Catalina\",\n            \"browser_version\": \"93.0\",\n            \"report\": [\n                {\n                    \"resource_summary\": {\n                        \"html\": {\n                            \"content_size\": 1256,\n                            \"requests\": 1\n                        },\n                        \"css\": {\n                            \"content_size\": 0,\n                            \"requests\": 0\n                        },\n                        \"javascript\": {\n                            \"content_size\": 0,\n                            \"requests\": 0\n                        },\n                        \"image\": {\n                            \"content_size\": 0,\n                            \"requests\": 0\n                        },\n                        \"font\": {\n                            \"content_size\": 0,\n                            \"requests\": 0\n                        }\n                    },\n                    \"cpu\": {\n                        \"long_tasks\": 0,\n                        \"categories\": 0\n                    },\n                    \"navigation_timings\": {\n                        \"dns_lookup\": 2,\n                        \"tcp_connect\": 32,\n                        \"ttfb\": 84,\n                        \"response\": 35,\n                        \"dom_processing\": 150,\n                        \"on_load\": 20,\n                        \"browser_processing\": 20,\n                        \"page_load_time\": 150\n                    },\n                    \"visual_metrics\": {\n                        \"speed_index\": 300,\n                        \"visually_complete\": 300,\n                        \"visually_complete_85\": 300,\n                        \"visually_complete_95\": 300,\n                        \"visually_complete_99\": 300,\n                        \"last_visual_change\": 300\n                    },\n                    \"web_vitals\": {\n                        \"fcp\": 170,\n                        \"lcp\": 0,\n                        \"cls\": 0,\n                        \"tbt\": 0\n                    },\n                    \"har_logs\": \"https://api.browserstack.com/speedlab/beta/report/55378db6dcaaadde16389c6aa0f5dc52c25800a0/har?browser_name=firefox&browser_version=93.0&os=OS+X&os_version=Catalina&run=run-1\",\n                    \"filmstrips\": {\n                        \"fcp\": \"https://api.browserstack.com/speedlab/beta/report/55378db6dcaaadde16389c6aa0f5dc52c25800a0/filmstrips?browser_name=firefox&browser_version=93.0&event=fcp&os=OS+X&os_version=Catalina&run=run-1\",\n                        \"visually_complete_85\": \"https://api.browserstack.com/speedlab/beta/report/55378db6dcaaadde16389c6aa0f5dc52c25800a0/filmstrips?browser_name=firefox&browser_version=93.0&event=vc_85&os=OS+X&os_version=Catalina&run=run-1\",\n                        \"visually_complete_95\": \"https://api.browserstack.com/speedlab/beta/report/55378db6dcaaadde16389c6aa0f5dc52c25800a0/filmstrips?browser_name=firefox&browser_version=93.0&event=vc_95&os=OS+X&os_version=Catalina&run=run-1\",\n                        \"visually_complete_99\": \"https://api.browserstack.com/speedlab/beta/report/55378db6dcaaadde16389c6aa0f5dc52c25800a0/filmstrips?browser_name=firefox&browser_version=93.0&event=vc_99&os=OS+X&os_version=Catalina&run=run-1\",\n                        \"page_load_time\": \"https://api.browserstack.com/speedlab/beta/report/55378db6dcaaadde16389c6aa0f5dc52c25800a0/filmstrips?browser_name=firefox&browser_version=93.0&event=page_load_time&os=OS+X&os_version=Catalina&run=run-1\",\n                        \"dom_content_load_time\": \"https://api.browserstack.com/speedlab/beta/report/55378db6dcaaadde16389c6aa0f5dc52c25800a0/filmstrips?browser_name=firefox&browser_version=93.0&event=dom_content_load_time&os=OS+X&os_version=Catalina&run=run-1\",\n                        \"last_visual_change\": \"https://api.browserstack.com/speedlab/beta/report/55378db6dcaaadde16389c6aa0f5dc52c25800a0/filmstrips?browser_name=firefox&browser_version=93.0&event=last_vc&os=OS+X&os_version=Catalina&run=run-1\"\n                    }\n                }\n            ]\n        },\n        {\n            \"browser_name\": \"safari\",\n            \"os\": \"ios\",\n            \"os_version\": \"14\",\n            \"device\": \"iPhone XS\",\n            \"report\": [\n                {\n                    \"navigation_timings\": {\n                        \"dns_lookup\": 0,\n                        \"tcp_connect\": 54,\n                        \"ttfb\": 226,\n                        \"response\": 16,\n                        \"dom_processing\": 9,\n                        \"on_load\": 0,\n                        \"page_load_time\": 318,\n                        \"browser_processing\": 9\n                    },\n                    \"web_vitals\": {\n                        \"fcp\": 330\n                    }\n                }\n            ]\n        },\n        {\n            \"browser_name\": \"chrome\",\n            \"os\": \"OS X\",\n            \"os_version\": \"Mojave\",\n            \"browser_version\": \"75.0\",\n            \"report\": [\n                {\n                    \"resource_summary\": {\n                        \"html\": {\n                            \"content_size\": 1256,\n                            \"requests\": 1\n                        },\n                        \"css\": {\n                            \"content_size\": 0,\n                            \"requests\": 0\n                        },\n                        \"javascript\": {\n                            \"content_size\": 0,\n                            \"requests\": 0\n                        },\n                        \"image\": {\n                            \"content_size\": 0,\n                            \"requests\": 0\n                        },\n                        \"font\": {\n                            \"content_size\": 0,\n                            \"requests\": 0\n                        }\n                    },\n                    \"cpu\": {\n                        \"long_tasks\": {\n                            \"tasks\": 1,\n                            \"total_duration\": 134.9599999957718\n                        },\n                        \"categories\": {\n                            \"parse_html\": 7,\n                            \"style_layout\": 158,\n                            \"paint_composite_render\": 4,\n                            \"script_parse_compile\": 0,\n                            \"script_evaluation\": 7,\n                            \"garbage_collection\": 0,\n                            \"other\": 41\n                        }\n                    },\n                    \"navigation_timings\": {\n                        \"dns_lookup\": 0,\n                        \"tcp_connect\": 31,\n                        \"ttfb\": 116,\n                        \"response\": 36,\n                        \"dom_processing\": 173,\n                        \"on_load\": 0,\n                        \"browser_processing\": 3,\n                        \"page_load_time\": 173\n                    },\n                    \"visual_metrics\": {\n                        \"speed_index\": 400,\n                        \"visually_complete\": 400,\n                        \"visually_complete_85\": 400,\n                        \"visually_complete_95\": 400,\n                        \"visually_complete_99\": 400,\n                        \"last_visual_change\": 400\n                    },\n                    \"web_vitals\": {\n                        \"fcp\": 342,\n                        \"lcp\": 0,\n                        \"cls\": 0,\n                        \"tbt\": 0\n                    },\n                    \"har_logs\": \"https://api.browserstack.com/speedlab/beta/report/55378db6dcaaadde16389c6aa0f5dc52c25800a0/har?browser_name=chrome&browser_version=75.0&os=OS+X&os_version=Mojave&run=run-1\",\n                    \"filmstrips\": {\n                        \"fcp\": \"https://api.browserstack.com/speedlab/beta/report/55378db6dcaaadde16389c6aa0f5dc52c25800a0/filmstrips?browser_name=chrome&browser_version=75.0&event=fcp&os=OS+X&os_version=Mojave&run=run-1\",\n                        \"visually_complete_85\": \"https://api.browserstack.com/speedlab/beta/report/55378db6dcaaadde16389c6aa0f5dc52c25800a0/filmstrips?browser_name=chrome&browser_version=75.0&event=vc_85&os=OS+X&os_version=Mojave&run=run-1\",\n                        \"visually_complete_95\": \"https://api.browserstack.com/speedlab/beta/report/55378db6dcaaadde16389c6aa0f5dc52c25800a0/filmstrips?browser_name=chrome&browser_version=75.0&event=vc_95&os=OS+X&os_version=Mojave&run=run-1\",\n                        \"visually_complete_99\": \"https://api.browserstack.com/speedlab/beta/report/55378db6dcaaadde16389c6aa0f5dc52c25800a0/filmstrips?browser_name=chrome&browser_version=75.0&event=vc_99&os=OS+X&os_version=Mojave&run=run-1\",\n                        \"page_load_time\": \"https://api.browserstack.com/speedlab/beta/report/55378db6dcaaadde16389c6aa0f5dc52c25800a0/filmstrips?browser_name=chrome&browser_version=75.0&event=page_load_time&os=OS+X&os_version=Mojave&run=run-1\",\n                        \"dom_content_load_time\": \"https://api.browserstack.com/speedlab/beta/report/55378db6dcaaadde16389c6aa0f5dc52c25800a0/filmstrips?browser_name=chrome&browser_version=75.0&event=dom_content_load_time&os=OS+X&os_version=Mojave&run=run-1\",\n                        \"last_visual_change\": \"https://api.browserstack.com/speedlab/beta/report/55378db6dcaaadde16389c6aa0f5dc52c25800a0/filmstrips?browser_name=chrome&browser_version=75.0&event=last_vc&os=OS+X&os_version=Mojave&run=run-1\"\n                    }\n                }\n            ]\n        },\n        {\n            \"browser_name\": \"chrome\",\n            \"os\": \"android\",\n            \"os_version\": \"9.0\",\n            \"device\": \"Samsung Galaxy S10\",\n            \"report\": [\n                {\n                    \"navigation_timings\": {\n                        \"dns_lookup\": 0,\n                        \"tcp_connect\": 0,\n                        \"ttfb\": 0,\n                        \"response\": 0,\n                        \"dom_processing\": 0,\n                        \"on_load\": 0,\n                        \"browser_processing\": 0,\n                        \"page_load_time\": 0\n                    },\n                    \"visual_metrics\": {\n                        \"speed_index\": 0,\n                        \"visually_complete\": 0,\n                        \"visually_complete_85\": 0,\n                        \"visually_complete_95\": 0,\n                        \"visually_complete_99\": 0,\n                        \"last_visual_change\": 0\n                    },\n                    \"web_vitals\": {\n                        \"fcp\": 0,\n                        \"lcp\": 0,\n                        \"cls\": 0,\n                        \"tbt\": 0\n                    }\n                }\n            ]\n        },\n        {\n            \"audit_logs\": \"https://api.browserstack.com/speedlab/beta/report/55378db6dcaaadde16389c6aa0f5dc52c25800a0/audit?run=run-1\"\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Report Assets",
+			"item": [
+				{
+					"name": "HAR",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/report/:id/har?browser_name=firefox&browser_version=84&os=OS+X&os_version=mojave",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"report",
+								":id",
+								"har"
+							],
+							"query": [
+								{
+									"key": "browser_name",
+									"value": "firefox",
+									"description": "In case of desktop"
+								},
+								{
+									"key": "browser_version",
+									"value": "84",
+									"description": "In case of desktop"
+								},
+								{
+									"key": "os",
+									"value": "OS+X"
+								},
+								{
+									"key": "os_version",
+									"value": "mojave"
+								},
+								{
+									"key": "run",
+									"value": "run-1",
+									"disabled": true
+								},
+								{
+									"key": "device",
+									"value": "",
+									"description": "In case of devices only",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "HAR",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/report/55378db6dcaaadde16389c6aa0f5dc52c25800a0/har?browser_name=chrome&browser_version=75.0&os=OS+X&os_version=Mojave&run=run-1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"report",
+										"55378db6dcaaadde16389c6aa0f5dc52c25800a0",
+										"har"
+									],
+									"query": [
+										{
+											"key": "browser_name",
+											"value": "chrome"
+										},
+										{
+											"key": "browser_version",
+											"value": "75.0"
+										},
+										{
+											"key": "os",
+											"value": "OS+X"
+										},
+										{
+											"key": "os_version",
+											"value": "Mojave"
+										},
+										{
+											"key": "run",
+											"value": "run-1"
+										},
+										{
+											"key": "device",
+											"value": "Samsung+s10",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    \"log\": {\n        \n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Filmstrips",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/report/:id/filmstrips?browser_name=chrome&browser_version=75.0&os=OS+X&os_version=Mojave&run=run-1&event=fcp",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"report",
+								":id",
+								"filmstrips"
+							],
+							"query": [
+								{
+									"key": "browser_name",
+									"value": "chrome"
+								},
+								{
+									"key": "browser_version",
+									"value": "75.0"
+								},
+								{
+									"key": "os",
+									"value": "OS+X"
+								},
+								{
+									"key": "os_version",
+									"value": "Mojave"
+								},
+								{
+									"key": "run",
+									"value": "run-1"
+								},
+								{
+									"key": "event",
+									"value": "fcp"
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Filmstrips",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/report/55378db6dcaaadde16389c6aa0f5dc52c25800a0/filmstrips?browser_name=chrome&browser_version=75.0&os=OS+X&os_version=Mojave&run=run-1&event=fcp",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"report",
+										"55378db6dcaaadde16389c6aa0f5dc52c25800a0",
+										"filmstrips"
+									],
+									"query": [
+										{
+											"key": "browser_name",
+											"value": "chrome"
+										},
+										{
+											"key": "browser_version",
+											"value": "75.0"
+										},
+										{
+											"key": "os",
+											"value": "OS+X"
+										},
+										{
+											"key": "os_version",
+											"value": "Mojave"
+										},
+										{
+											"key": "run",
+											"value": "run-1"
+										},
+										{
+											"key": "event",
+											"value": "fcp"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "<image>"
+						}
+					]
+				},
+				{
+					"name": "Audit",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/report/:id/audit?run=run-1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"report",
+								":id",
+								"audit"
+							],
+							"query": [
+								{
+									"key": "run",
+									"value": "run-1"
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Audit",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/report/55378db6dcaaadde16389c6aa0f5dc52c25800a0/audit?run=run-1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"report",
+										"55378db6dcaaadde16389c6aa0f5dc52c25800a0",
+										"audit"
+									],
+									"query": [
+										{
+											"key": "run",
+											"value": "run-1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    \"best_practices\": [],\n    \"performance\": []\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": {
+			"password": "browserstack_selenium_key",
+			"username": "browserstack_access_key"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://api.browserstack.com/speedlab/beta"
+		}
+	]
+}
