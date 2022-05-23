@@ -26,7 +26,7 @@ async function start_workflow() {
     job_id = await generate_report(BASE_URL, TEST_URL, config, auth);
   } catch (err) {
     console.log(err.message);
-    console.log(err.response.data);
+    if(err.response) console.log(err.response.data);
     return;
   }
 
