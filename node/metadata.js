@@ -1,5 +1,6 @@
 const axios = require("axios");
 const { get_random_items } = require("./utils");
+const {devices_count,desktops_count} =require("./config")
 
 const ENDPOINTS = {
   desktop_meta: "/meta/desktops",
@@ -18,7 +19,7 @@ async function get_metadata(base_url, auth) {
     auth
   );
   console.log("Desktop data fetched! Selecting random desktops\n");
-  METADATA["desktops"] = [...get_random_items(desktop_metadata.data.desktops, 2)];
+  METADATA["desktops"] = [...get_random_items(desktop_metadata.data.desktops, desktops_count)];
 
   // GET /meta/devices
   console.log(`Fetching devices metadata... \n GET: ${ENDPOINTS.devices_meta}`);
@@ -27,7 +28,7 @@ async function get_metadata(base_url, auth) {
     auth
   );
   console.log("Devices data fetched! Selecting random device\n");
-  METADATA["devices"] = [...get_random_items(devices_metadata.data.devices, 2)];
+  METADATA["devices"] = [...get_random_items(devices_metadata.data.devices, devices_count)];
 
   // GET /meta/regions
   console.log(`Fetching regions... \n GET: ${ENDPOINTS.regions}`);
