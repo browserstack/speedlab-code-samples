@@ -1,5 +1,5 @@
 const axios = require("axios");
-const { get_random_item } = require("./utils");
+const { get_random_items } = require("./utils");
 
 const ENDPOINTS = {
   desktop_meta: "/meta/desktops",
@@ -17,9 +17,8 @@ async function get_metadata(base_url, auth) {
     base_url + ENDPOINTS.desktop_meta,
     auth
   );
-  console.log(JSON.stringify(desktop_metadata.data));
-  console.log("Desktop data fetched! Selecting random desktop\n");
-  METADATA["desktops"] = [get_random_item(desktop_metadata.data.desktops)];
+  console.log("Desktop data fetched! Selecting random desktops\n");
+  METADATA["desktops"] = [...get_random_items(desktop_metadata.data.desktops, 2)];
 
   // GET /meta/devices
   console.log(`Fetching devices metadata... \n GET: ${ENDPOINTS.devices_meta}`);
@@ -27,30 +26,23 @@ async function get_metadata(base_url, auth) {
     base_url + ENDPOINTS.devices_meta,
     auth
   );
-  console.log(JSON.stringify(devices_metadata.data));
   console.log("Devices data fetched! Selecting random device\n");
-  METADATA["devices"] = [get_random_item(devices_metadata.data.devices)];
+  METADATA["devices"] = [...get_random_items(devices_metadata.data.devices, 2)];
 
   // GET /meta/regions
   console.log(`Fetching regions... \n GET: ${ENDPOINTS.regions}`);
   const regions = await get_metadata_call(base_url + ENDPOINTS.regions, auth);
-  console.log(JSON.stringify(regions.data));
   console.log("Regions fetched! Selecting random region\n");
-  METADATA["region"] = get_random_item(regions.data.regions);
+  METADATA["region"] = get_random_items(regions.data.regions, 1)[0];
 
   // GET /meta/networks
   console.log(`Fetching networks... \n GET: ${ENDPOINTS.networks}`);
   const networks = await get_metadata_call(base_url + ENDPOINTS.networks, auth);
-  console.log(JSON.stringify(networks.data));
   console.log(
     "Networks fetched! Selecting random network for mobile and desktops\n"
   );
-  METADATA["desktop_network"] = get_random_item(
-    networks.data.networks.desktop
-  ).value;
-  METADATA["device_network"] = get_random_item(
-    networks.data.networks.mobile
-  ).value;
+  METADATA["desktop_network"] = get_random_items(networks.data.networks.desktop, 1)[0].value;
+  METADATA["device_network"] = get_random_items(networks.data.networks.mobile, 1)[0].value;
 
   return METADATA;
 }
