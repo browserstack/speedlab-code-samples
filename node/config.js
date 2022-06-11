@@ -5,8 +5,8 @@ const auth = {
   password: "browserstack_selenium_key",
 };
 
-const desktops_count = 2
-const devices_count = 2
+const desktops_count = 1
+const devices_count = 1
 const JOB_ID = "";
 
 module.exports = {
