@@ -1,4 +1,4 @@
-const BASE_URL = "https://api.browserstack.com/speedlab/beta";
+const BASE_URL = "https://api.browserstack.com/speedlab";
 
 const auth = {
   username: "browserstack_access_key",
