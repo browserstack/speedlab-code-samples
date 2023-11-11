@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/browserstack/speedlab-code-samples#readme",
   "dependencies": {
-    "axios": "^0.26.0"
+    "axios": "^1.6.0"
   }
 }
