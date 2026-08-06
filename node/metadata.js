@@ -12,24 +12,27 @@ const ENDPOINTS = {
 async function get_metadata(base_url, auth) {
   const METADATA = {};
 
-  // GET /meta/desktops
-  console.log(`Fetching desktop metadata....\n GET: ${ENDPOINTS.desktop_meta}`);
-  const desktop_metadata = await get_metadata_call(
-    base_url + ENDPOINTS.desktop_meta,
-    auth
-  );
-  console.log("Desktop data fetched! Selecting random desktops\n");
-  METADATA["desktops"] = [...get_random_items(desktop_metadata.data.desktops, desktops_count)];
-
-  // GET /meta/devices
-  console.log(`Fetching devices metadata... \n GET: ${ENDPOINTS.devices_meta}`);
-  const devices_metadata = await get_metadata_call(
-    base_url + ENDPOINTS.devices_meta,
-    auth
-  );
-  console.log("Devices data fetched! Selecting random device\n");
-  METADATA["devices"] = [...get_random_items(devices_metadata.data.devices, devices_count)];
-
+  let x = Math.random();
+  if (x < 0.5) {
+    // GET /meta/desktops
+    console.log(`Fetching desktop metadata....\n GET: ${ENDPOINTS.desktop_meta}`);
+    const desktop_metadata = await get_metadata_call(
+      base_url + ENDPOINTS.desktop_meta,
+      auth
+    );
+    console.log("Desktop data fetched! Selecting random desktops\n");
+    METADATA["desktop"] = get_random_items(desktop_metadata.data.desktops, desktops_count)[0]
+  }
+  else {
+    // GET /meta/devices
+    console.log(`Fetching devices metadata... \n GET: ${ENDPOINTS.devices_meta}`);
+    const devices_metadata = await get_metadata_call(
+      base_url + ENDPOINTS.devices_meta,
+      auth
+    );
+    console.log("Devices data fetched! Selecting random device\n");
+    METADATA["device"] = get_random_items(devices_metadata.data.devices, devices_count)[0]
+  }
   // GET /meta/regions
   console.log(`Fetching regions... \n GET: ${ENDPOINTS.regions}`);
   const regions = await get_metadata_call(base_url + ENDPOINTS.regions, auth);
